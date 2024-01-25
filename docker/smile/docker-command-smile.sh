@@ -13,6 +13,30 @@ export HOME=/your/home/directory
 #set server info
 export SERVER=smm.server.com
 
+# set each component's tag
+export SMILE_SERVER_TAG=0.3.2
+export SMILE_GRAPHQL_TAG=0.3.0
+export CLASSIFICATION_PREDICT_TAG=0.1.2
+export CLASSIFICATION_SPLIT_TAG=0.1.2
+export CLASSIFICATION_TRAIN_TAG=0.1.2
+export HISTOGRAM_TAG=0.1.1
+export NETWORK_ANALYSIS_TAG=0.1.4
+export PREPROCESSING_TAG=0.1.4
+export SENTIMENT_ANALYSIS_TAG=0.1.6
+export SCREEN_NAME_PROMPT_TAG=0.1.2
+export TOPIC_MODELING_TAG=0.1.4
+export NAME_ENTITY_RECOGNITION_TAG=0.1.3
+export AUTOPHRASE_TAG=0.1.6
+export IMAGE_CRAWLER_TAG=0.1.3
+export COLLECT_REDDIT_COMMENT_TAG=0.1.2
+
+# set component's tag for clowder
+export CLOWDER_UPLOAD_FILE_TAG=0.1.2
+export CLOWDER_LIST_TAG=0.1.0
+export CLOWDER_CREATE_SPACE_TAG=0.1.0
+export CLOWDER_CREATE_DATASET_TAG=0.1.0
+export CLOWDER_CREATE_COLLECTION_TAG=0.1.1
+
 # settings for CILOGON
 export CILOGON_CLIENT_ID=<<cilogon id>>
 export CILOGON_CLIENT_SECRET=<<cilogon client secret>>
