@@ -50,8 +50,6 @@ spec:
               value: "http://{{ include "smile.fullname" . }}-graphql:5050/graphql"
             - name: LOCAL_ALGORITHM
               value: "true"
-            - name: HOST_IP
-              value: "{{ include "smile.fullname" . }}-minio"
             - name: SHARE_EXPIRE_IN
               value: "1"
             - name: GA_KEY
@@ -102,7 +100,7 @@ spec:
                   {{- end }}
                   key: TWITTER_V2_CLIENT_SECRET
             - name: TWITTER_V2_CALLBACK_URL
-              value: "https://{{ .host }}/login/twitterV2/callback"
+              value: "https://smile.smm.ncsa.illinois.edu/login/twitterV2/callback"
             - name: REDDIT_ON
               value: "true"
             - name: REDDIT_CLIENT_ID
@@ -200,7 +198,7 @@ spec:
                   {{- end }}
                   key: CILOGON_CLIENT_SECRET
             - name: CILOGON_CALLBACK_URL
-              value: https://{{ .host }}/smile-login/callback
+              value: https://smile.smm.ncsa.illinois.edu/smile-login/callback
             {{- include "smile.minio.connect" . | nindent 12 }}
             {{- include "smile.email.connect" . | nindent 12 }}
           ports:
