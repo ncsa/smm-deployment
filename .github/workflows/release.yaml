@@ -2,7 +2,7 @@ name: Release Charts
 
 defaults:
   run:
-    working-directory: www/helm/smile
+    working-directory: helm/smile
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
       - name: get release info
         id: release_info
         run: |
-          version="$(awk '/^version:/ { print $2} ' helm/smile/Chart.yaml)"
+          version="$(awk '/^version:/ { print $2} ' Chart.yaml)"
           changelog="$(sed -e "1,/^### ${version}/d" -e "/^###/,\$d" -e '/^$/d' README.md)"
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
