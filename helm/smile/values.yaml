@@ -303,7 +303,7 @@ rabbitmq:
     hostname: smile.localhost
   persistence:
 #    enabled: true
-#    mountPath: "/your/path"
+    mountPath: "/your/path"
 #    existingClaim: rabbitmq-pvc
   auth:
     username: guest
