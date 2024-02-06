@@ -52,30 +52,31 @@ jobs:
       - name: run helm template
         run: helm template . 
 
-#      - name: Publish to NCSA OpenSource
+      - name: Publish to NCSA OpenSource
 #        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
-#        uses: bsord/helm-push@v4.1.0
-#        with:
-#          username: ${{ secrets.HELM_USERNAME }}
-#          password: ${{ secrets.HELM_PASSWORD }}
-#          registry-url: "https://opensource.ncsa.illinois.edu/charts"
-#          chart-folder: "."
-#          force: true
-#
-#      - name: create release
-#        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
-#        uses: actions/create-release@v1
-#        id: create_release
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          #tag_name: ${{ steps.release_info.outputs.version }}
-#          tag_name: $version
-#          #release_name: Release ${{ steps.release_info.outputs.version }}
-#          release_name: Release $version
-#          #body: ${{ steps.release_info.outputs.changelog }}
-#          body: $changelog
-#
+        if: github.repository == env.MAIN_REPO
+        uses: bsord/helm-push@v4.1.0
+        with:
+          username: ${{ secrets.HELM_USERNAME }}
+          password: ${{ secrets.HELM_PASSWORD }}
+          registry-url: "https://opensource.ncsa.illinois.edu/charts"
+          chart-folder: "."
+          force: true
+
+      - name: create release
+        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          #tag_name: ${{ steps.release_info.outputs.version }}
+          tag_name: $version
+          #release_name: Release ${{ steps.release_info.outputs.version }}
+          release_name: Release $version
+          #body: ${{ steps.release_info.outputs.changelog }}
+          body: $changelog
+
 #      - name: Upload Release Asset
 #        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
 #        id: upload-release-asset
