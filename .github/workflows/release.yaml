@@ -37,8 +37,7 @@ jobs:
         id: release_info
         run: |
           version="$(awk '/^version:/ { print $2} ' Chart.yaml)"
-          version="0.1.0"
-          changelog="$(sed -e "1,/^## ${version}/d" -e "/^##[^[:space:]]/,\$d" -e '/^$/d' CHANGELOG.md)"
+          changelog="$(awk -v ver="${version}" '/^## /{p=0} p; $0 ~ "^## " ver{p=1}' CHANGELOG.md)"
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}"
