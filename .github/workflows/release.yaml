@@ -41,13 +41,13 @@ jobs:
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}"
-          echo "{name}={version}" >> $GITHUB_ENV
-          echo "{name}={changelog}" >> $GITHUB_ENV
-
+          echo "version=${version}" >> $GITHUB_ENV
+          echo "changelog=${changelog}" >> $GITHUB_ENV
+          
       - name: print release info
         run: |
-          echo "version: $version"
-          echo "changelog: $changelog"
+          echo "version: ${version}"
+          echo "changelog: ${changelog}"
 
       - name: run helm template
         run: helm template . 
