@@ -27,7 +27,7 @@ sources:
 # dependencies for the helm chart, use helm dep install to the install them.
 dependencies:
   - name: rabbitmq
-    version: ~11
+    version: 11.7
     repository: https://charts.bitnami.com/bitnami
   - name: minio
     version: ~12

@@ -41,13 +41,8 @@ jobs:
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}"
-          echo "{name}={version}" >> $GITHUB_OUTPUT
-          echo "{name}={changelog}" >> $GITHUB_OUTPUT
-
-      - name: print release info
-        run: |
-          echo "version: $GITHUB_OUTPUT"
-          echo "changelog: $GITHUB_OUTPUT"
+          echo "{name}={version}" >> $GITHUB_ENV
+          echo "{name}={changelog}" >> $GITHUB_ENV
 
       - name: run helm template
         run: helm template . 
@@ -69,9 +64,12 @@ jobs:
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #        with:
-#          tag_name: ${{ steps.release_info.outputs.version }}
-#          release_name: Release ${{ steps.release_info.outputs.version }}
-#          body: ${{ steps.release_info.outputs.changelog }}
+#          #tag_name: ${{ steps.release_info.outputs.version }}
+#          tag_name: $version
+#          #release_name: Release ${{ steps.release_info.outputs.version }}
+#          release_name: Release $version
+#          #body: ${{ steps.release_info.outputs.changelog }}
+#          body: $changelog
 #
 #      - name: Upload Release Asset
 #        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
@@ -81,6 +79,8 @@ jobs:
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #        with:
 #          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: ./incore-${{ steps.release_info.outputs.version }}.tgz
-#          asset_name: incore-${{ steps.release_info.outputs.version }}.tgz
+#          #asset_path: ./smm-${{ steps.release_info.outputs.version }}.tgz
+#          asset_path: ./smm-${{ steps.release_info.outputs.version }}.tgz
+#          #asset_name: smm-$version.tgz
+#          asset_name: smm-$version.tgz
 #          asset_content_type: application/zip
