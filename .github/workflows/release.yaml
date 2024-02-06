@@ -40,8 +40,6 @@ jobs:
           changelog="$(sed -e "1,/^## ${version}/d" -e "/^##/,\$d" -e '/^$/d' CHANGELOG.md)"
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
-          changelog="${changelog//$'\r'/'%0D'}"changelog="${changelog//'%'/'%25'}"
-          changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}"
           echo "version=${version}" >> $GITHUB_ENV
           echo "changelog=${changelog}" >> $GITHUB_ENV
