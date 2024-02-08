@@ -50,7 +50,10 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
+    # the first one should be the smile server's hostname
     - host: smm.localhost
+    # the second one should be the clowder's hostname
+    - host: clowder.your.domain
 #  tls: []
   #  - secretName: chart-example-tls
   #    hosts:
