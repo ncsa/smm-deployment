@@ -29,7 +29,7 @@ spec:
               value: "{{ include "smile.fullname" . }}-rabbitmq"
             - name: QUEUE_NAME
               value: lambda_upload_clowder
-            {{- if and (gt (len .Values.ingress.hosts) 1) (index .Values.ingress.hosts 1) }}
+            {{- if and (gt (len .Values.ingress.hosts) 1) }}
             - name: CLOWDER_BASE_URL
               value: "https://{{ index .Values.ingress.hosts 1 }}/"
             {{- end }}
