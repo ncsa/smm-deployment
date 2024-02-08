@@ -1,3 +1,6 @@
+# set app version
+export APP_VERSION=0.1.0
+
 # set each component's tag
 export SMILE_SERVER_TAG=0.3.2
 export SMILE_GRAPHQL_TAG=0.3.0
