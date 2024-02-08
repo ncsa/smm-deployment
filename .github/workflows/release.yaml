@@ -69,11 +69,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
 #          tag_name: ${{ steps.release_info.outputs.version }}
-          tag_name: ${{ version }}
+          tag_name: ${{ env.version }}
 #          release_name: Release ${{ steps.release_info.outputs.version }}
           release_name: Release $version
 #          body: ${{ steps.release_info.outputs.changelog }}
-          body: ${{ changelog }}
+          body: ${{ env.changelog }}
 
 #      - name: Upload Release Asset
 ##        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
