@@ -1,0 +1,74 @@
+name: Release Charts
+
+defaults:
+  run:
+    working-directory: charts/smile
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+env:
+  MAIN_REPO: ncsa/smm-deployment
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get dependencies
+        run: |
+          helm repo add ncsa https://opensource.ncsa.illinois.edu/charts
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm dep build
+
+      - name: get release info
+        id: release_info
+        run: |
+          version="$(awk '/^version:/ { print $2} ' Chart.yaml)"
+          changelog="$(sed -e "1,/^### ${version}/d" -e "/^###/,\$d" -e '/^$/d' README.md)"
+          changelog="${changelog//'%'/'%25'}"
+          changelog="${changelog//$'\n'/'%0A'}"
+          changelog="${changelog//$'\r'/'%0D'}"
+          echo "version=${version}" >> $GITHUB_ENV
+          echo "changelog=${changelog}" >> $GITHUB_ENV
+
+      - name: print release info
+        run: |
+          echo "version: ${version}"
+          echo "changelog: ${changelog}"
+
+      - name: run helm template
+        run: |
+          helm version
+          helm template .
+
+      - name: Publish to NCSA OpenSource
+#        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
+        if: github.repository == env.MAIN_REPO
+        uses: bsord/helm-push@v4.1.0
+        with:
+          username: ${{ secrets.HELM_USERNAME }}
+          password: ${{ secrets.HELM_PASSWORD }}
+          registry-url: "https://opensource.ncsa.illinois.edu/charts"
+          chart-folder: "charts/smile"
+          force: true
+
+      - name: create release
+#        if: github.event_name != 'pull_request' && github.repository == env.MAIN_REPO
+        if: github.repository == env.MAIN_REPO
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.version }}
+          release_name: Release ${{ env.version }}
+          body: ${{ env.changelog }}

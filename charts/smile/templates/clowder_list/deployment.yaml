@@ -25,13 +25,11 @@ spec:
           command: ["python"]
           args: ["./rabbitmq_handler.py"]
           env:
-            - name: HOST_IP
-              value: "{{ include "smile.fullname" . }}-minio"
             - name: RABBITMQ_HOST
               value: "{{ include "smile.fullname" . }}-rabbitmq"
             - name: QUEUE_NAME
               value: lambda_list_clowder
-            {{- with (index .Values.ingress.hosts 1) }}
+            {{- with (index .Values.ingress.hosts 1)}}
             - name: CLOWDER_BASE_URL
               value: "https://{{ .host }}/"
             {{- end }}
