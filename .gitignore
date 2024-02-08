@@ -38,7 +38,7 @@ server/local.properties
 *_test*
 
 # ignore helm charts
-helm/smile/charts
+charts/smile/charts
 
 *.dockerconfigjson
 *tls.crt
@@ -58,7 +58,7 @@ charts/smile/templates/secret.yaml
 *secrets.yaml
 
 # list of dependency charts
-charts/
+charts/charts
 
 # box files
 values-*.yaml
