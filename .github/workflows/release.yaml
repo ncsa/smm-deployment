@@ -98,6 +98,12 @@ on:
     branches:
       - main
 
+  pull_request:
+    branches:
+      - main
+      - develop
+      - 'release/*'
+
 jobs:
   release:
     runs-on: ubuntu-latest
