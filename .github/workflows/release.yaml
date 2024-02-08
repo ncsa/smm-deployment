@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.HELM_USERNAME }}
           password: ${{ secrets.HELM_PASSWORD }}
           registry-url: "https://opensource.ncsa.illinois.edu/charts"
-          chart-folder: "."
+          chart-folder: "charts/smile"
           force: true
 
       - name: create release
