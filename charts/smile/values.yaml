@@ -294,15 +294,9 @@ clowder_upload_file:
 # ----------------------------------------------------------------------
 rabbitmq:
   enabled: true
-#  service:
-#    portEnabled: true
-#    ports.amqp: 5672
-#    ports.manager: 15672
   ingress:
     enabled: true
     hostname: smile.localhost
-#  persistence:
-#    mountPath: /bitnami/rabbitmq/mnesia
   auth:
     username: guest
     password: guest
