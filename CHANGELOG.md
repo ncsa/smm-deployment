@@ -8,3 +8,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - docker-compose files. [#1](https://github.com/ncsa/smm-deployment/issues/1)
+- github action to release and publish helm chart. [#6](https://github.com/nvandeguchte/smm-deployment/issues/6)
