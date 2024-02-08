@@ -48,12 +48,12 @@ helm/smile/charts
 __pycache__
 
 # values for deployment
-helm/smile/templates/values-clowder-*.yaml
-helm/smile/templates/values-smile.yaml
+charts/smile/templates/values-clowder-*.yaml
+charts/smile/templates/values-smile.yaml
 
 # secrets
-helm/smile/templates/smile.secrets.yaml
-helm/smile/templates/secret.yaml
+charts/smile/templates/smile.secrets.yaml
+charts/smile/templates/secret.yaml
 *secret.yaml
 *secrets.yaml
 
