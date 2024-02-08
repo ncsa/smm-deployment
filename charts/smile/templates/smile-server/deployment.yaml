@@ -99,8 +99,10 @@ spec:
                   name: {{ include "smile.fullname" . }}-server
                   {{- end }}
                   key: TWITTER_V2_CLIENT_SECRET
+            {{- with (first .Values.ingress.hosts) }}
             - name: TWITTER_V2_CALLBACK_URL
               value: "https://{{ .host }}/login/twitterV2/callback"
+            {{- end }}
             - name: REDDIT_ON
               value: "true"
             - name: REDDIT_CLIENT_ID

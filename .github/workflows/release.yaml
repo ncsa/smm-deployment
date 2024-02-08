@@ -10,7 +10,7 @@ on:
       - main
 
   pull_request:
-    
+
 env:
   MAIN_REPO: ncsa/smm-deployment
 

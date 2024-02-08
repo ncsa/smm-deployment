@@ -31,7 +31,7 @@ spec:
               value: lambda_list_clowder
             {{- with (index .Values.ingress.hosts 1)}}
             - name: CLOWDER_BASE_URL
-              value: "https://{{ index .Values.ingress.hosts 1 }}/"
+              value: "https://{{ .host }}/"
             {{- end }}
             - name: CLOWDER_GLOBAL_KEY
               valueFrom:

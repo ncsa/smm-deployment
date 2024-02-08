@@ -31,7 +31,7 @@ spec:
               value: clowder_create_space
             {{- with (index .Values.ingress.hosts 1)}}
             - name: CLOWDER_BASE_URL
-              value: "https://{{ index .Values.ingress.hosts 1 }}/"
+              value: "https://{{ .host }}/"
             {{- end }}
           resources:
             {{- toYaml .Values.clowder_create_space.resources | nindent 12 }}
