@@ -301,8 +301,8 @@ rabbitmq:
   ingress:
     enabled: true
     hostname: smile.localhost
-  persistence:
-    mountPath: /bitnami/rabbitmq/mnesia
+#  persistence:
+#    mountPath: /bitnami/rabbitmq/mnesia
   auth:
     username: guest
     password: guest
