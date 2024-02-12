@@ -14,7 +14,7 @@ export HOME=/your/home/directory
 export SERVER=smm.server.com
 
 # set smile and clowder versions
-source config.yaml
+source config.txt
 
 # settings for CILOGON
 export CILOGON_CLIENT_ID=<<cilogon id>>
