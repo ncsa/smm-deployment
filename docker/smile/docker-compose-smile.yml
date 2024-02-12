@@ -51,7 +51,7 @@ services:
     restart: unless-stopped
 
   algorithm-classification-predict:
-    image: socialmediamacroscope/classification_predict:latest
+    image: socialmediamacroscope/classification_predict:${CLASSIFICATION_PREDICT_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -66,7 +66,7 @@ services:
     restart: unless-stopped    
 
   algorithm-classification-split:
-    image: socialmediamacroscope/classification_split:latest
+    image: socialmediamacroscope/classification_split:${CLASSIFICATION_SPLIT_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -81,7 +81,7 @@ services:
     restart: unless-stopped
 
   algorithm-classification-train:
-    image: socialmediamacroscope/classification_train:latest
+    image: socialmediamacroscope/classification_train:${CLASSIFICATION_TRAIN_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -96,7 +96,7 @@ services:
     restart: unless-stopped
 
   algorithm-histogram:
-    image: socialmediamacroscope/histogram:latest
+    image: socialmediamacroscope/histogram:${HISTOGRAM_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -111,7 +111,7 @@ services:
     restart: unless-stopped
 
   algorithm-network-analysis:
-    image: socialmediamacroscope/network_analysis:latest
+    image: socialmediamacroscope/network_analysis:${NETWORK_ANALYSIS_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -130,7 +130,7 @@ services:
     restart: unless-stopped
 
   algorithm-preprocessing:
-    image: socialmediamacroscope/preprocessing:latest
+    image: socialmediamacroscope/preprocessing:${PREPROCESSING_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -149,7 +149,7 @@ services:
     restart: unless-stopped
 
   algorithm-sentiment-analysis:
-    image: socialmediamacroscope/sentiment_analysis:latest
+    image: socialmediamacroscope/sentiment_analysis:${SENTIMENT_ANALYSIS_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -168,7 +168,7 @@ services:
     restart: unless-stopped
 
   algorithm-screen-name-prompt:
-    image: socialmediamacroscope/screen_name_prompt:latest
+    image: socialmediamacroscope/screen_name_prompt:${SCREEN_NAME_PROMPT_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -183,7 +183,7 @@ services:
     restart: unless-stopped
 
   algorithm-topic-modeling:
-    image: socialmediamacroscope/topic_modeling:latest
+    image: socialmediamacroscope/topic_modeling:${TOPIC_MODELING_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -202,7 +202,7 @@ services:
     restart: unless-stopped
 
   algorithm-name-entity-recognition:
-    image: socialmediamacroscope/name_entity_recognition:latest
+    image: socialmediamacroscope/name_entity_recognition:${NAME_ENTITY_RECOGNITION_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -221,7 +221,7 @@ services:
     restart: unless-stopped
 
   algorithm-autophrase:
-    image: socialmediamacroscope/autophrase:latest
+    image: socialmediamacroscope/autophrase:${AUTOPHRASE_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -240,7 +240,7 @@ services:
     restart: unless-stopped
 
   image-crawler:
-    image: socialmediamacroscope/image_crawler:latest
+    image: socialmediamacroscope/image_crawler:${IMAGE_CRAWLER_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -259,7 +259,7 @@ services:
     restart: unless-stopped
 
   collect-reddit-comment:
-    image: socialmediamacroscope/collect_reddit_comment:latest
+    image: socialmediamacroscope/collect_reddit_comment:${COLLECT_REDDIT_COMMENT_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -280,7 +280,7 @@ services:
     restart: unless-stopped
 
   smile-server:
-    image: socialmediamacroscope/smile_server:latest
+    image: socialmediamacroscope/smile_server:${SMILE_SERVER_TAG}
     depends_on:
       - rabbitmq
       - minio
@@ -334,7 +334,7 @@ services:
     restart: unless-stopped
 
   smile-graphql:
-    image: socialmediamacroscope/smile_graphql:latest
+    image: socialmediamacroscope/smile_graphql:${SMILE_GRAPHQL_TAG}
     ports:
     - 5050:5050
     command: npm run docker-start

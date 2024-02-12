@@ -7,5 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- docker-compose files. [#1](https://github.com/ncsa/smm-deployment/issues/1)
+- helm chart and docker-compose files. [#1](https://github.com/ncsa/smm-deployment/issues/1)
+- environment variables for controlling components' tags. [#3](https://github.com/nationalarchives/tdr-dev-documentation/issues/3)
 - github action to release and publish helm chart. [#6](https://github.com/nvandeguchte/smm-deployment/issues/6)

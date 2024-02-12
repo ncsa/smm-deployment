@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   clowder-upload-file:
-    image: socialmediamacroscope/clowder_upload_file:latest
+    image: socialmediamacroscope/clowder_upload_file:${CLOWDER_UPLOAD_FILE_TAG}
     container_name: clowder_upload_file
     depends_on:
       - rabbitmq
@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
 
   clowder-list:
-    image: socialmediamacroscope/clowder_list:latest
+    image: socialmediamacroscope/clowder_list:${CLOWDER_LIST_TAG}
     container_name: clowder_list
     depends_on:
       - rabbitmq
@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
 
   clowder-create-space:
-    image: socialmediamacroscope/clowder_create_space:latest
+    image: socialmediamacroscope/clowder_create_space:${CLOWDER_CREATE_SPACE_TAG}
     container_name: clowder_create_space
     depends_on:
       - rabbitmq
@@ -44,7 +44,7 @@ services:
     restart: unless-stopped
 
   clowder-create-dataset:
-    image: socialmediamacroscope/clowder_create_dataset:latest
+    image: socialmediamacroscope/clowder_create_dataset:${CLOWDER_CREATE_DATASET_TAG}
     container_name: clowder_create_dataset
     depends_on:
       - rabbitmq
@@ -56,7 +56,7 @@ services:
     restart: unless-stopped
 
   clowder-create-collection:
-    image: socialmediamacroscope/clowder_create_collection:latest
+    image: socialmediamacroscope/clowder_create_collection:${CLOWDER_CREATE_COLLECTION_TAG}
     container_name: clowder_create_collection
     depends_on:
       - rabbitmq
