@@ -53,9 +53,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-Needs to be written
-
-The following table lists the configurable parameters of the IN-CORE chart and their default values.
+The following table lists the configurable parameters of the SMILE chart and their default values.
 
 | Parameter                                          | Description                                             | Default                                |
 |----------------------------------------------------|---------------------------------------------------------|----------------------------------------|
