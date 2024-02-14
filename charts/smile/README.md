@@ -134,41 +134,18 @@ The following table lists the configurable parameters of the IN-CORE chart and t
 
 
 
-
-
-
-
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. Or more convenient
 use a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml ncsa/incore
-```
-
-Since the ingress hostname is used in multiple places, it is recommended to use
-a variable in yaml to copy this information. For example:
-
-```yaml
-hostname: &hostname incore-tst.ncsa.illinois.edu
-
-ingress:
-  hosts:
-    - host: *hostname
-
-      
-keycloak:
-  ingress:
-    rules:
-      - host: *hostname
-        paths:
-          - /auth/
+$ helm install --name my-release -f values.yaml ncsa/smile
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml) to find the names of all options
 
 ## Persistence
 
-IN-CORE will use a persistent storage to store all data that is uploaded as well as is generated.
+SMILE will use a persistent storage to store all data that is uploaded as well as is generated.
 
 ### Existing PersistentVolumeClaims
 
@@ -176,7 +153,7 @@ IN-CORE will use a persistent storage to store all data that is uploaded as well
 1. Create the PersistentVolumeClaim
 1. Install the chart
 
-For an example of using existing PVC, see the file [incore-pvc.yaml](incore-pvc.yaml).
+For an example of using existing PVC, see the file [smile-pvc.yaml](smile-pvc.yaml.template).
 
 
 ## Changelog
