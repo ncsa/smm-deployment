@@ -7,12 +7,6 @@
 - Contact us the **[SRTI lab](https://srtilab.techservices.illinois.edu/about/)** if you have any question: <a href="mailto:srti-lab@illinois.edu">srti-lab@illinois.edu</a>
 - [SMILE Playground](https://smm-tester.ncsa.illinois.edu) coming soon...
 
-### For developers:
-#### Structure of SMILE:
-![Architecture](./www/public/img/SMILE_architecture.png)
-
-## TL;DR;
-
 ```bash
 $ helm repo add ncsa https://opensource.ncsa.illinois.edu/charts/
 $ helm install smile ncsa/smile
