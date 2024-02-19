@@ -4,7 +4,7 @@
 ### For users or potential users:
 - [SMILE](https://smile.smm.ncsa.illinois.edu)
 - Watch the **[Overview video](https://www.youtube.com/watch?v=ySb-8TwJ0Ds)**
-- Contact us the **[SRTI lab](https://srtilab.techservices.illinois.edu/about/)** if you have any question: <a href="mailto:srti-lab@illinois.edu">srti-lab@illinois.edu</a>
+- Contact us the **[SMILE](https://smile.smm.ncsa.illinois.edu/)** if you have any question: <a href="mailto:smm@lists.illinois.edu">smm@lists.illinois.edu</a>
 - [SMILE Playground](https://smm-tester.ncsa.illinois.edu) coming soon...
 
 ```bash
