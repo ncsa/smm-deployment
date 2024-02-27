@@ -1,16 +1,59 @@
-.DS_Store
-www/downloads
-www/uploads
-node_modules
-www/nltk_data
-main_config.json
-graphql_config.json
-map.json
-*.log
-*.swp
-.idea
+# backup files
+*~
 
-# secrets and values files
-*smile.secret.yaml
-*values-clowder.yaml
-*values-smile.yaml
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# vim swap files
+*.swp
+
+# IDEA:
+.idea/
+server/incore-v2.ipr
+server/incore-v2.iws
+**.iml
+**.iml
+
+# IDEA - generated artifacts
+**/build/
+**/out/
+
+# Apple metadata
+**/.DS_Store
+
+# local gradle files
+**/.gradle/
+server/local.properties
+
+.vagrant/
+
+*-test*
+*_test*
+
+# ignore helm charts
+charts/smile/charts
+
+*.dockerconfigjson
+*tls.crt
+*tls.key
+
+# config
+__pycache__
+
+# values for deployment
+charts/smile/templates/values-clowder-*.yaml
+charts/smile/templates/values-smile.yaml
+
+# secrets
+charts/smile/templates/smile.secrets.yaml
+charts/smile/templates/secret.yaml
+*secret.yaml
+*secrets.yaml
+
+# list of dependency charts
+charts/charts
+
+# box files
+values-*.yaml
+regcred.json
+regcred.sh
