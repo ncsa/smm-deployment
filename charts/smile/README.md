@@ -1,11 +1,8 @@
 ## SMILE (Social Media Intelligence and Learning Environment)
-![logo](www/public/img/logo/square2.png)
 
 ### For users or potential users:
-- [SMILE](https://smile.smm.ncsa.illinois.edu)
-- Watch the **[Overview video](https://www.youtube.com/watch?v=ySb-8TwJ0Ds)**
-- Contact us the **[SMILE](https://smile.smm.ncsa.illinois.edu/)** if you have any question: <a href="mailto:smm@lists.illinois.edu">smm@lists.illinois.edu</a>
-- [SMILE Playground](https://smm-tester.ncsa.illinois.edu) coming soon...
+- Contact us the SMM DEV Team if you have any question: <a href="mailto:smm@lists.illinois.edu">smm@lists.illinois.edu</a>
+- Try out our [SMILE Playground](https://smile.smm.ncsa.illinois.edu/)
 
 ```bash
 $ helm repo add ncsa https://opensource.ncsa.illinois.edu/charts/
