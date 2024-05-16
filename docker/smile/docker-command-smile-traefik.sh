@@ -69,15 +69,16 @@ export TWITTER_ON=true
 export TWITTER_V2_CLIENT_ID=<<twitter v2 client id>>
 export TWITTER_V2_CLIENT_SECRET=<<twitter v2 client secret>>
 export TWITTER_V2_CALLBACK_URL=<<twitter v2 callback url>>
+export GOOGLE_ON=true
+export GOOGLE_CLIENT_ID=<<google client id>>
+export GOOGLE_CLIENT_SECRET=<<google client secret>>
+export GOOGLE_CALLBACK_URL=<<redirect url after google login>>
 
 # export
 export BOX_CLIENT_ID=<box client id>
 export BOX_CLIENT_SECRET=<<box client secret>>
 export DROPBOX_CLIENT_ID=<<dropbox client id>>
 export DROPBOX_CLIENT_SECRET=<<dropbox client secret>>
-export GOOGLE_CLIENT_ID=<<google client id>>
-export GOOGLE_CLIENT_SECRET=<<google client secret>>
-export GOOGLE_CALLBACK_URL=<<redirect url after google login>>
 
 export CLOWDER_BASE_URL=https://clowder.server.com/
 export CLOWDER_GLOBAL_KEY=<<clowder global key>>
