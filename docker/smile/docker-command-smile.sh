@@ -69,6 +69,7 @@ export DROPBOX_CLIENT_ID=<<dropbox client id>>
 export DROPBOX_CLIENT_SECRET=<<dropbox client secret>>
 export GOOGLE_CLIENT_ID=<<google client id>>
 export GOOGLE_CLIENT_SECRET=<<google client secret>>
+export GOOGLE_CALLBACK_URL=<<redirect url after google login>>
 
 export CLOWDER_BASE_URL=https://clowder.server.com/
 export CLOWDER_GLOBAL_KEY=<<clowder global key>>

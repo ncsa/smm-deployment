@@ -190,6 +190,10 @@ spec:
                   name: {{ include "smile.fullname" . }}-server
                   {{- end }}
                   key: CILOGON_CLIENT_ID
+            {{- with (first .Values.ingress.hosts) }}
+            - name: GOOGLE_CALLBACK_URL
+              value: "https://{{ .host }}/login/google/callback"
+            {{- end }}
             - name: CILOGON_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
